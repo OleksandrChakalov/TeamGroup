@@ -1,2 +1,2 @@
 # TeamGroup
-Repository of the team project from OOA&amp;P
+Repository of the OOA&amp;P project
