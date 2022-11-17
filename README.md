@@ -6,6 +6,7 @@
 - [Description](#project-description)
 - [Architecture](#architecture)
 
+
 ## **Team**
 
 - Chakalov Oleksandr
@@ -21,19 +22,25 @@ This web application is a trip planner which can make organizing your trips easi
 
 **Use case diagram**
 
+
 <img src="./Docs/use-case.png">
+
 <br/>
 <br/>
 
 **Guest sequence diagram**
 
+
 <img src="./Docs/guest-sequence.png">
+
 <br/>
 <br/>
 
 **User sequence diagram**
 
+
 <img src="./Docs/user-sequence.png">
+
 <br/>
 <br/>
 
@@ -46,7 +53,9 @@ This web application is a trip planner which can make organizing your trips easi
 | DB              | SQL database for user management and NoSQL for user trips | Azure SQL Database, MongoDB   |
 
 <br/>
+
 <img src="./Docs/architecture.png">
+
 <br/>
 <br/>
 
@@ -106,4 +115,3 @@ Example of _TripTemplate_ document for MongoDB:
   ]
 }
 ```
-
