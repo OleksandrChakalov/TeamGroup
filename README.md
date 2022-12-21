@@ -189,6 +189,8 @@ Example of _TripTemplate_ document for MongoDB:
 
 
 # Resiliency model
+## ER Diagram
+![](Docs/er.png)
 
 
 # Security model
