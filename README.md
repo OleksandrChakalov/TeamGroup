@@ -235,7 +235,7 @@ Application consists of 3 tiers:
  To keep it simple, our Web server tier simply forward requests to the App server, that in turn run sql queries on the rds instance.
  
   Steps to complete the project:
-1. Create a VPC and its components — 6 Subnets (2 each in 2 availability zones for 3 tiers — Public and Private ), Internet Gateway, NAT Gateway, 2 Route tables (Public and Private).
+1. Create a VPC and its components
 2. Create 3 Security Groups (for 3 tiers).
 3. Create Application load balancers
 4. Create Launch Templates for the Auto scaling group (Web server) and an Application Tier (App server).
