@@ -5,6 +5,7 @@
 - [Team](#team)
 - [Description](#project-description)
 - [Architecture](#architecture)
+- [Data Model](#datamodel)
 
 
 ## **Team**
@@ -116,4 +117,20 @@ Example of _TripTemplate_ document for MongoDB:
 }
 ```
 
-# test
+# Data model
+
+
+# Resiliency model
+
+
+# Security model
+
+
+# Deployment model
+
+
+# Analics model
+
+
+# Monitoring
+
