@@ -123,10 +123,9 @@ Example of _TripTemplate_ document for MongoDB:
 ```
 
 # Data model
-
-* User data is stored permanently.
-* User login data is stored permanently.
-* Trip templates are stored forever until there is a need to change them (the data has lost relevance).
+* User data is stored permanently. Data can be deleted by the user when he decides to do it.
+* User login data is stored permanently. The data can be used for further analysis.
+* Trip templates are saved permanently. The administrator can add new trip templates that are gaining popularity, or delete templates that lose relevance.
 * The user's trips are stored in the database as long as the user exists, or until the user himself deletes the trip data.
 
 ## Tables for storing user data
@@ -167,10 +166,10 @@ Example of _TripTemplate_ document for MongoDB:
 |     |     |
 | --- | --- |
 | Name | item name |
-| Description Description of node | 
-| Type | current type Before Trip/At Trip/After Trip |
+| Description | Description of node | 
+| Type | current type // Before Trip/At Trip/After Trip |
 | Date | time when you did it |
-| Status | current status To Do/In Progress/Done |
+| Status | current status To // Do/In Progress/Done |
 
 
 ## Table for storing trips
