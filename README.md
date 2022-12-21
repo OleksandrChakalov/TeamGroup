@@ -124,6 +124,69 @@ Example of _TripTemplate_ document for MongoDB:
 
 # Data model
 
+* User data is stored permanently.
+* User login data is stored permanently.
+* Trip templates are stored forever until there is a need to change them (the data has lost relevance).
+* The user's trips are stored in the database as long as the user exists, or until the user himself deletes the trip data.
+
+## Tables for storing user data
+### User
+|     |     |
+| --- | --- |
+| Id | user identifier |
+| UserName | user's name |
+| Email | user's email |
+| PasswordHash | hash code of the user's password |
+
+### UserLogin
+|     |     |
+| --- | --- |
+| Id | user login Id |
+| ProviderKey | provider key |
+| ProviderDisplayName | provider name |
+| UserId | user identifier |
+| User | user data |
+
+
+## Tables for storing templates of trips
+### TripTemplate
+|     |     |
+| --- | --- |
+| Id |  trip template identifier |
+| Name |  name of trip |
+| ItemsToTake |  list of items you should take to that kind of trip {ItemToTake} |
+| ToDoNodes |  list of things you should do on that kind of trip {ToDoNodes} |
+
+### ItemToTake
+|     |     |
+| --- | --- |
+| Name | item name |
+| IsTaken | flag of taken item |
+
+### ToDoNode
+|     |     |
+| --- | --- |
+| Name | item name |
+| Description Description of node | 
+| Type | current type Before Trip/At Trip/After Trip |
+| Date | time when you did it |
+| Status | current status To Do/In Progress/Done |
+
+
+## Table for storing trips
+### Trip
+|     |     |
+| --- | --- |
+| Id | trip identifier |
+| Status | trip status // enum Planned/In Progress/Closed |
+| UserId | user identifier |
+| Name | name of trip |
+| Description | Description of trip |
+| StartDate | date when trip start |
+| EndDate  | date when trip end |
+| ItemsToTake | list of items you should take to that kind of trip |
+| ToDoNodes | list of things you should do on that kind of trip |
+
 
 # Resiliency model
 
