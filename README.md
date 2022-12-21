@@ -138,6 +138,7 @@ Example of _TripTemplate_ document for MongoDB:
 | PasswordHash | hash code of the user's password |
 
 ### UserLogin
+|     |     |
 | --- | --- |
 | Id | user login Id |
 | ProviderKey | provider key |
@@ -148,6 +149,7 @@ Example of _TripTemplate_ document for MongoDB:
 
 ## Tables for storing templates of trips
 ### TripTemplate
+|     |     |
 | --- | --- |
 | Id |  trip template identifier |
 | Name |  name of trip |
@@ -155,11 +157,13 @@ Example of _TripTemplate_ document for MongoDB:
 | ToDoNodes |  list of things you should do on that kind of trip {ToDoNodes} |
 
 ### ItemToTake
+|     |     |
 | --- | --- |
 | Name | item name |
 | IsTaken | flag of taken item |
 
 ### ToDoNode
+|     |     |
 | --- | --- |
 | Name | item name |
 | Description | Description of node | 
@@ -170,6 +174,7 @@ Example of _TripTemplate_ document for MongoDB:
 
 ## Table for storing trips
 ### Trip
+|     |     |
 | --- | --- |
 | Id | trip identifier |
 | Status | trip status // enum Planned/In Progress/Closed |
