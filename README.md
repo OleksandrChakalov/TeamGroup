@@ -214,8 +214,25 @@ The system is small, so there is not much place for error.
 
 # Deployment model
 
-<img src="./Docs/user-sequence.png">
+<img src="./Docs/deployment.png">
 
+Technologies:
+Amazon Route 53
+Elastic Load Balancing
+AWS CloudFormation
+Amazon VPC
+AWS ALB
+Amazon ElastiCache
+Amazon RDS
+AWS S3
+Amazon ECS with EC2 launch type
+
+Application consists of 3 tiers:
+ - Auto scaling group (Web server)
+ - App tier (App server)
+ - Database caching tier using Amazon ElastiCache and Amazon RDS
+
+ To keep it simple, our Web server tier simply forward requests to the App server, that in turn run sql queries on the rds instance.
 
 
 # Analics model
