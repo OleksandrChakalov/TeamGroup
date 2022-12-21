@@ -5,7 +5,12 @@
 - [Team](#team)
 - [Description](#project-description)
 - [Architecture](#architecture)
-- [Data Model](#data)
+- [Data Model](#data-model)
+- [Resiliency model](#resiliency-model)
+- [Security model](#security-model)
+- [Deployment model](#deployment-model)
+- [Analics model](#analics-model)
+- [Monitoring](#monitoring)
 
 
 ## **Team**
