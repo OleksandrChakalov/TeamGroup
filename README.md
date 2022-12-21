@@ -147,16 +147,21 @@ Example of _TripTemplate_ document for MongoDB:
 
 
 # Analics model
-
+| Metrics | Way to collect | Value | Mitigation plan |
+| ------- | -------------- | ------| --------------- |
+| Quantity of active users | Server side script | num | Advertisement |
+| Interaction with login page | Pixel or Google Analitics on the UI side | - | UI changes , A/B testing |
+| Number of discarded trips per user | Server side script | num | - |
+| Time spent on trip creation | Frontend script | seconds | Updating UX to reduce time |
+| Time spent with sign up procedure | Frontend script | seconds | Updating UX to reduce time |
 
 # Monitoring
-| Metrics | Way to collect | Mitigation plan |
-| ------- | -------------- | --------------- |
-| Quantity of active users | Server side script | Advertisement |
-| Interaction with login page | Pixel or Google Analitics on the UI side | UI changes , A/B testing |
-| Number of discarded trips per user | Server side script | - |
-| Time spent on trip creation | Frontend script | Updating UX to reduce time |
-| Time spent with sign up procedure | Frontend script | Updating UX to reduce time |
+| Metrics | Way to collect | Value | Mitigation plan |
+| ------- | -------------- | ------| --------------- |
+| Memory used | GCP monitoring | Mb | Add more memory |
+| CPU used | GCP monitoring | percentage | Increace CPU core number |
+| Failed db requests | Specific scripts | numer | Investigate possible causes |
+| Request processing time | - | miliseconds | Optimize performance |
 
 
 
