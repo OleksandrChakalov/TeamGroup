@@ -5,7 +5,7 @@
 - [Team](#team)
 - [Description](#project-description)
 - [Architecture](#architecture)
-- [Data Model](#datamodel)
+- [Data Model](#data)
 
 
 ## **Team**
@@ -134,6 +134,7 @@ Example of _TripTemplate_ document for MongoDB:
 8. Access to SQL database with user info can be obtained by sniffing trafic.
 9. Access to the unencypted MongoDB data can be obtained by elevating user privileges.
 10. Access to the databases (SQL or MongoDB) can be obtained due to lack of the network protection.
+11. An adversary can spam through browser automation with account creation.
 
 
 
@@ -144,4 +145,13 @@ Example of _TripTemplate_ document for MongoDB:
 
 
 # Monitoring
+| Metrics | Way to collect | Mitigation plan |
+| ------- | -------------- | --------------- |
+| Quantity of active users | Server side script | Advertisement |
+| Interaction with login page | Pixel or Google Analitics on the UI side | UI changes , A/B testing |
+| Number of discarded trips per user | Server side script | - |
+| Time spent on trip creation | Frontend script | Updating UX to reduce time |
+| Time spent with sign up procedure | Frontend script | Updating UX to reduce time |
+
+
 
