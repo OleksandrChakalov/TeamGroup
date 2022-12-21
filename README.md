@@ -130,6 +130,7 @@ Example of _TripTemplate_ document for MongoDB:
 
 ## Tables for storing user data
 ### User
+|     |     |
 | --- | --- |
 | Id | user identifier |
 | UserName | user's name |
