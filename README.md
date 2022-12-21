@@ -130,7 +130,6 @@ Example of _TripTemplate_ document for MongoDB:
 
 ## Tables for storing user data
 ### User
-|     |     |
 | --- | --- |
 | Id | user identifier |
 | UserName | user's name |
@@ -138,7 +137,6 @@ Example of _TripTemplate_ document for MongoDB:
 | PasswordHash | hash code of the user's password |
 
 ### UserLogin
-|     |     |
 | --- | --- |
 | Id | user login Id |
 | ProviderKey | provider key |
@@ -149,7 +147,6 @@ Example of _TripTemplate_ document for MongoDB:
 
 ## Tables for storing templates of trips
 ### TripTemplate
-|     |     |
 | --- | --- |
 | Id |  trip template identifier |
 | Name |  name of trip |
@@ -157,13 +154,11 @@ Example of _TripTemplate_ document for MongoDB:
 | ToDoNodes |  list of things you should do on that kind of trip {ToDoNodes} |
 
 ### ItemToTake
-|     |     |
 | --- | --- |
 | Name | item name |
 | IsTaken | flag of taken item |
 
 ### ToDoNode
-|     |     |
 | --- | --- |
 | Name | item name |
 | Description | Description of node | 
@@ -174,7 +169,6 @@ Example of _TripTemplate_ document for MongoDB:
 
 ## Table for storing trips
 ### Trip
-|     |     |
 | --- | --- |
 | Id | trip identifier |
 | Status | trip status // enum Planned/In Progress/Closed |
@@ -188,8 +182,13 @@ Example of _TripTemplate_ document for MongoDB:
 
 
 # Resiliency model
+The system is small, so there is not much place for error.
+1. When using app, there may be a malfunction of the API, it is not available. In this case, app will notify user that service is currently unavailable.
+2. When using app, one of the databases may malfunction, it is not possible to use information about users or about their trips, so it will be possible to view only information stored locally.
+
 ## ER Diagram
 ![](Docs/er.png)
+
 
 
 # Security model
