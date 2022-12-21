@@ -124,6 +124,17 @@ Example of _TripTemplate_ document for MongoDB:
 
 
 # Security model
+1. HTTP protocol is used cominicatig with API, so secure info can be stollen by adversary.
+2. Secure user info can be stollen by sniffing traffic on log in, sign up or password recovery stages.
+3. UI can be changed on the fly by JS injection attack and secure info user may be stollen. 
+4. Access to the API may be blocked by denial of service attack.
+5. Access to the SQL database may be blocked by denial of service attack.
+6. Access to the MongoDB service can be blocked by denial of service attack.
+7. Access to the web UI may be blocked through denial to service attack.
+8. Access to SQL database with user info can be obtained by sniffing trafic.
+9. Access to the unencypted MongoDB data can be obtained by elevating user privileges.
+10. Access to the databases (SQL or MongoDB) can be obtained due to lack of the network protection.
+
 
 
 # Deployment model
