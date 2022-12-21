@@ -209,6 +209,9 @@ Example of _TripTemplate_ document for MongoDB:
 
 # Deployment model
 
+<img src="./Docs/user-sequence.png">
+
+
 
 # Analics model
 | Metrics | Way to collect | Value | Mitigation plan |
