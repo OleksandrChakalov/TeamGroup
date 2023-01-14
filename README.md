@@ -50,18 +50,6 @@ This web application is a trip planner which can make organizing your trips easi
 <br/>
 <br/>
 
-## **Architecture**
-
-| Part of project | Description                                               | Technologies                  |
-| --------------- | --------------------------------------------------------- | ----------------------------- |
-| Back end        | API based on CQRS                                         | .NET 5, ASP.Net Core          |
-| Fron end        | SPA                                                       | React, Type Script, AntDesign |
-| DB              | SQL database for user management and NoSQL for user trips | Azure SQL Database, MongoDB   |
-
-<br/>
-
-<img src="./Docs/architecture.png">
-
 <br/>
 <br/>
 
