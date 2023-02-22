@@ -1,0 +1,43 @@
+Project Charter for Trip Planner Application:
+
+Project Title: Go & See Trip Planner
+
+Project Objectives:
+
+To develop a web application that simplifies the process of trip planning and packing list creation.
+To provide an intuitive and user-friendly interface for creating, editing and sharing travel itineraries.
+To allow users to easily take and organize photos during their trip and add them to their itinerary.
+To provide users with a tool to keep track of their travel preparations and to ensure that they do not forget anything important.
+To provide a seamless user experience that saves time and reduces the stress associated with travel planning.
+
+
+Project Goals:
+
+Develop a user-friendly and intuitive interface for trip planning and packing list creation.
+Implement a feature for taking and organizing photos during the trip.
+Ensure that the application is secure and user data is protected.
+Ensure that the application is scalable and can handle a large number of users.
+Launch the application on schedule and within budget.
+
+
+Target Audience:
+
+Frequent travelers who want an easy-to-use tool to plan their trips.
+Individuals who want to ensure they don't forget anything important when packing for their trip.
+Travel enthusiasts who want to document their trips and share their experiences with others.
+
+
+Stakeholders:
+
+Project Manager: Responsible for overseeing the development process and ensuring that the project is completed on schedule and within budget.
+Development Team: Responsible for designing, developing, and testing the application.
+End Users: The individuals who will be using the application.
+Investors: Individuals or organizations who have invested in the project.
+
+
+Project Constraints:
+
+Budget: The project budget is limited and all development activities must be completed within budget.
+Time: The project must be completed within the given timeline.
+Resources: The development team has limited resources and must work efficiently to complete the project.
+Technical Constraints: The application must be compatible with a range of web browsers and devices, and must meet security standards.
