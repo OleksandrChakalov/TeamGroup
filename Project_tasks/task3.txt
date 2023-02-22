@@ -1,0 +1,44 @@
+Project: Go & See Trip Planner
+
+Objective: To create a web application that simplifies the process of trip planning by providing users with a centralized platform to create a packing list, plan their itinerary, and capture memories during their trip.
+
+Project Schedule:
+Task 1: Requirement Gathering (Feb 17, 2023 - Mar 09, 2023)
+Task 2: Tests creating (Mar 03, 2023 - Apr 14, 2023)
+Task 3: Implementing CI/CD (Apr 11, 2023 - May 10, 2023)
+
+
+Deadlines:
+
+Requirement Gathering: Mar 09, 2023
+Testing and Quality Assurance: Apr 14, 2023
+Implementing CI/CD: May 10, 2023
+Summarize project: May 17, 2023
+
+Resource Allocation:
+
+Human Resources:
+Project Manager
+UI/UX Designer
+Front-end Developer
+Back-end Developer
+Quality Assurance Specialist
+
+Financial Resources:
+Salaries for human resources
+Hosting and server costs
+Software licenses
+Marketing expenses
+
+Technological Resources:
+Web hosting services
+Code editor and IDEs
+Version control systems
+
+Budget:
+
+Salaries for human resources: $100,000
+Hosting and server costs: $1,000
+Software licenses: $500
+Marketing expenses: $500
+Total budget: $102,000
