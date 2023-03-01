@@ -19,7 +19,6 @@ Resource Allocation:
 
 Human Resources:
 Project Manager
-UI/UX Designer
 Front-end Developer
 Back-end Developer
 Quality Assurance Specialist

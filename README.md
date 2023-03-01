@@ -29,7 +29,7 @@ This web application is a trip planner which can make organizing your trips easi
 **Use case diagram**
 
 
-<img src="./Docs/use-case.png">
+<img src="Project_tasks/Docs/use-case.png">
 
 <br/>
 <br/>
@@ -37,7 +37,7 @@ This web application is a trip planner which can make organizing your trips easi
 **Guest sequence diagram**
 
 
-<img src="./Docs/guest-sequence.png">
+<img src="Project_tasks/Docs/guest-sequence.png">
 
 <br/>
 <br/>
@@ -45,7 +45,7 @@ This web application is a trip planner which can make organizing your trips easi
 **User sequence diagram**
 
 
-<img src="./Docs/user-sequence.png">
+<img src="Project_tasks/Docs/user-sequence.png">
 
 <br/>
 <br/>
@@ -181,7 +181,7 @@ The system is small, so there is not much place for error.
 2. When using app, one of the databases may malfunction, it is not possible to use information about users or about their trips, so it will be possible to view only information stored locally.
 
 ## ER Diagram
-![](Docs/er.png)
+![](Project_tasks/Docs/er.png)
 
 
 
@@ -202,7 +202,7 @@ The system is small, so there is not much place for error.
 
 # Deployment model
 
-<img src="./Docs/deployment.png">
+<img src="Project_tasks/Docs/deployment.png">
 
 Technologies:
 Amazon Route 53

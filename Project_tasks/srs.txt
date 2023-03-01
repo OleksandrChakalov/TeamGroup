@@ -1,0 +1,71 @@
+Introduction
+1.1 Purpose
+The purpose of this document is to define the requirements and specifications for the Go & See trip planner application, which is designed to make trip planning and organization easier for users.
+1.2 Scope
+The Go & See trip planner application is a web-based application that allows users to create and manage a list of items they need to take with them on their trip. The application also offers features such as authentication, login, and planner during the trip, including taking photos and adding statuses such as to-do, in-progress, and done.
+
+1.3 Definitions, Acronyms, and Abbreviations
+SRS - Software Requirements Specification
+
+General Description
+2.1 Product Perspective
+
+The Go & See trip planner application is a standalone web-based application that allows users to organize and plan their trips efficiently. The application will interact with various external systems, such as Google's authentication service.
+
+2.2 Product Functions
+The following are the main functions of the Go & See trip planner application:
+
+Create and manage a list of items to take on a trip
+Add photos and notes to the planner during the trip
+Set statuses for the items on the list, including to-do, in-progress, and done
+Authenticate users via Google
+Save user data in a secure manner
+Provide user support through email or a feedback form
+
+2.3 User Characteristics
+The Go & See trip planner application is designed for individuals who want to plan and organize their trips efficiently. Users must have access to the internet and a device with a web browser to use the application.
+
+2.4 Assumptions and Dependencies
+The application is dependent on external services such as Google's authentication service. The application assumes that users will have basic computer skills and knowledge of web-based applications.
+
+Specific Requirements
+
+3.1 Functional Requirements
+The functional requirements of the Go & See trip planner application are as follows:
+
+User can create an account and log in using Google authentication
+User can create a new trip and add items to the list
+User can edit and delete items from the list
+User can set statuses for each item on the list (to-do, in-progress, done)
+User can add photos and notes to each item on the list
+User can view and filter the list by status and category
+
+3.2 Non-Functional Requirements
+The non-functional requirements of the Go & See trip planner application are as follows:
+
+The application should be user-friendly and easy to use
+The application should be accessible from any device with a web browser
+The application should be secure and protect user data
+The application should have a fast response time
+The application should be scalable to accommodate a large number of users
+
+3.3 System Requirements
+The system requirements of the Go & See trip planner application are as follows:
+
+The application should be compatible with modern web browsers (e.g. Google Chrome, Mozilla Firefox, Apple Safari)
+The application should be accessible on desktop and mobile devices
+The application should be hosted on a reliable web server with sufficient resources to handle the expected traffic
+The application should use a secure connection (HTTPS) to protect user data
+
+Constraints
+4.1 Time Constraints
+The development of the Go & See trip planner application must be completed within three months.
+4.2 Budget Constraints
+The development of the Go & See trip planner application must be completed within the allocated budget of $102,000.
+
+Appendix
+The following are additional resources for the Go & See trip planner application:
+User interface mockups
+Data model diagrams
+Network architecture diagrams
+Use case diagrams
