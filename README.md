@@ -26,6 +26,13 @@
 
 This web application is a trip planner which can make organizing your trips easier than it was before. With the assistance of our service user has no need to write down long lists of different items before his journey. All these items will be in one place - our planner, and the only thing that traveler should do before his vacation is to check if he doesn’t forget anything from the list that suggests the Go & See service.
 
+**Wireframes**
+
+<img src="Project_tasks/Docs/Mockup/wireframes.png">
+
+<br/>
+<br/>
+
 **Use case diagram**
 
 
