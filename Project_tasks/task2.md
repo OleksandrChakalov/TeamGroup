@@ -34,6 +34,11 @@ Development Team: Responsible for designing, developing, and testing the applica
 End Users: The individuals who will be using the application. End users will be consulted throughout the development process to ensure that their needs and requirements are being met.
 Investors: Individuals or organizations who have invested in the project. Investors will be kept informed of the project's progress and will be consulted on key decisions.
 
+Project Constraints:
+
+Budget: The project budget is limited and all development activities must be completed within budget. The development team will work to ensure that all features are implemented efficiently and cost-effectively.
+Time: The project must be completed within the given timeline. The development team will work to ensure that the project is completed on schedule, with a focus on meeting key milestones and deliverables.
+Resources: The development team has limited resources and must work efficiently to
 
 Technical Constraints:
 The application must be compatible with a range of devices and platforms, and must be scalable to handle a large number of users. The development team will work to ensure that the application is designed and developed to meet these technical requirements.

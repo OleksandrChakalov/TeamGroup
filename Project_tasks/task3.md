@@ -40,7 +40,7 @@ Salaries for human resources: $100,000
 Hosting and server costs: $1,000
 Software licenses: $500
 Marketing expenses: $500
-Total budget: $102,
+Total budget: $102,000
 
 
 Features:
