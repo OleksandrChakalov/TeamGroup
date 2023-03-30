@@ -60,7 +60,6 @@ Note: The above features are subject to change based on project requirements and
 
 Feature Implementation
 
-
 User Authentication: Implement a secure login and registration system for users to create and manage their own trip profiles.
 Dashboard for managing trips: Develop a dashboard to help users manage their trips, including the ability to create new trips, view upcoming trips, and edit existing trips.
 Packing List Creation: Create a feature that allows users to add items to a packing list for their trip, with the option to categorize items and mark them as packed or unpacked.
