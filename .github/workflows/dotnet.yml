@@ -2,7 +2,7 @@ name: Run test when create pull request to develop
 
 on:
   pull_request:
-    branches: [ dev ]
+    branches: [ main ]
 
 jobs:
   build:
