@@ -1,4 +1,4 @@
-name: Run test when create pull request to develop
+name: Run test when create pull request to main
 
 on:
   pull_request:
