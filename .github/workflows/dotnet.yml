@@ -48,7 +48,7 @@ jobs:
           files: ./TestResult/*/coverage.cobertura.xml
           name: GS.Business.Test Coverage Report
           flags: unittests
-          token: ${{ secrets.CODECOV_TOKEN }}
+          token: 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
           fail_ci_if_error: true
 
       - name: Run test in GS.Data.Test
