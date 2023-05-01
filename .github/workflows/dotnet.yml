@@ -11,19 +11,19 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-#      - name: Install Node.js
-#        uses: actions/setup-node@v2
-#        with:
-#          node-version: '14.x'
-#
-#      - name: Install dependencies for React app
-#        run: npm install --prefix ./GS.WebApi/GS.WebApp/ClientApp/
-#
-#      - name: Build React app
-#        run: npm run build --prefix ./GS.WebApi/GS.WebApp/ClientApp/
-#
-#      - name: Lint React app
-#        run: npm run lint --prefix ./GS.WebApi/GS.WebApp/ClientApp/
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+
+      - name: Install dependencies for React app
+        run: npm install --prefix ./GS.WebApi/GS.WebApp/ClientApp/
+
+      - name: Build React app
+        run: npm run build --prefix ./GS.WebApi/GS.WebApp/ClientApp/
+
+      - name: Lint React app
+        run: npm run lint --prefix ./GS.WebApi/GS.WebApp/ClientApp/
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v2
@@ -40,36 +40,25 @@ jobs:
         run:  dotnet build --configuration Release ./GS.WebApi/GS.Business.Test
 
       - name: Run test in GS.Business.Test
-        run:  dotnet test ./GS.WebApi/GS.Business.Test --collect:"XPlat Code Coverage" --logger trx --results-directory ./TestResults /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput="./TestResults/coverage.opencover.xml"
+        run:  dotnet test ./GS.WebApi/GS.Business.Test --collect:"XPlat Code Coverage" --logger trx --results-directory ./TestResults /p:CollectCoverage=true /p:CoverletOutputFormat=opencover"
 
-      - name: Upload code coverage report
-        uses: codecov/codecov-action@v1
-        with:
-          files: ./TestResult/*/coverage.cobertura.xml
-          name: GS.Business.Test Coverage Report
-          flags: unittests
-          token: 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
-          fail_ci_if_error: true
-
-      - name: Run test in GS.Data.Test
-        run:  dotnet test ./GS.WebApi/GS.Data.Test --collect:"XPlat Code Coverage" --logger trx /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
-
-#      - name: Archive Test Results
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: test-results
-#          path: |
-#            ./GS.WebApi/GS.Data.Test/TestResults
-#            ./GS.WebApi/GS.Business.Test/TestResults
-#
-#      - name: Generate code coverage report
+#      - name: Upload code coverage report
 #        uses: codecov/codecov-action@v1
 #        with:
-#          token: ${{ secrets.CODECOV_TOKEN }}
+#          files: ./TestResult/*/coverage.cobertura.xml
+#          name: GS.Business.Test Coverage Report
+#          flags: unittests
+#          token: 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
 #          fail_ci_if_error: true
 
-#      - name: Generate test coverage report
-#        run: dotnet tool install -g dotnet-reportgenerator-globaltool && reportgenerator "-reports:./GS.WebApi/GS.Business.Test/coverage.opencover.xml;./GS.WebApi/GS.Data.Test/coverage.opencover.xml" "-targetdir:./coverage" -reporttypes:Html
+      - name: Run test in GS.Data.Test
+        run:  dotnet test ./GS.WebApi/GS.Data.Test --collect:"XPlat Code Coverage" --logger trx --results-directory ./TestResults /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+
+      - name: Archive Test Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: ./TestResult/*/coverage.cobertura.xml
 
 
 
