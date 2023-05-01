@@ -10,8 +10,8 @@ const WriteToken = (response: ILogInResponse) => {
 };
 
 const GetAuthData = (): (ILogInResponse | undefined) => {
-  let authInfo = localStorage.getItem('auth');
-  let result = authInfo ? JSON.parse(authInfo) as ILogInResponse : undefined;
+  const authInfo = localStorage.getItem('auth');
+  const result = authInfo ? JSON.parse(authInfo) as ILogInResponse : undefined;
   return result;
 };
 
