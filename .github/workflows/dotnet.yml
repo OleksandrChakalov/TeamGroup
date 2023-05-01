@@ -40,18 +40,18 @@ jobs:
         run:  dotnet build --configuration Release ./GS.WebApi/GS.Business.Test
 
       - name: Run test in GS.Business.Test
-        run:  dotnet test ./GS.WebApi/GS.Business.Test --collect:"XPlat Code Coverage" --settings coverlet.runsettings --logger trx /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+        run:  dotnet test ./GS.WebApi/GS.Business.Test --collect:"XPlat Code Coverage" --logger trx /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 
       - name: Upload code coverage report
         uses: codecov/codecov-action@v1
         with:
-          files: ./GS.WebApi/GS.Business.Test/coverage.opencover.xml
+          files: ./GS.WebApi/GS.Business.Test/TestResults/31720774-5200-4b03-83b6-370d53ce25bb/coverage.cobertura.xml
           name: GS.Business.Test Coverage Report
           flags: unittests
           fail_ci_if_error: true
 
       - name: Run test in GS.Data.Test
-        run:  dotnet test ./GS.WebApi/GS.Data.Test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+        run:  dotnet test ./GS.WebApi/GS.Data.Test --collect:"XPlat Code Coverage" --logger trx /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 
       - name: Archive Test Results
         uses: actions/upload-artifact@v2
