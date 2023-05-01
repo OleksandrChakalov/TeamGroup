@@ -2,26 +2,45 @@ name: Run test when create pull request to main
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ main, feature ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
+
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+
+    - name: Install dependencies for React app
+      run: npm install --prefix ./GS.WebApi/GS.WebApp/ClientApp/
+
+    - name: Build React app
+      run: npm run build --prefix ./GS.WebApi/GS.WebApp/ClientApp/
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 5.0.x
+
     - name: Restore dependencies
       run: dotnet restore ./GS.WebApi/GoSee.sln
+
     - name: Build GS.Data.Test
       run:  dotnet build --configuration Release ./GS.WebApi/GS.Data.Test
+
     - name: Build GS.Business.Test
       run:  dotnet build --configuration Release ./GS.WebApi/GS.Business.Test
+
     - name: Run test in GS.Business.Test
       run:  dotnet test ./GS.WebApi/GS.Business.Test
+
     - name: Run test in GS.Data.Test
       run:  dotnet test ./GS.WebApi/GS.Data.Test
+
+
+
