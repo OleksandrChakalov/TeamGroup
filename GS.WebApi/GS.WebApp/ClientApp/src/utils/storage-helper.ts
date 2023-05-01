@@ -11,8 +11,7 @@ const WriteToken = (response: ILogInResponse) => {
 
 const GetAuthData = (): (ILogInResponse | undefined) => {
   const authInfo = localStorage.getItem('auth');
-  const result = authInfo ? JSON.parse(authInfo) as ILogInResponse : undefined;
-  return result;
+  return authInfo ? JSON.parse(authInfo) as ILogInResponse : undefined;
 };
 
 const CleanToken = () => {

@@ -18,7 +18,7 @@ interface ItemstoTakeProps {
 }
 
 const ItemstoTake: FC<ItemstoTakeProps> = ({ items, onAddItemToTake, onRemoveItemToTake, onItemToTakeStatusChange, onItemToTakeUpdate}: ItemstoTakeProps) => {
-  const defaultCheckedList = items.filter(item => item.isTaken === true).map(item => (item.name || ""));
+  const defaultCheckedList = items.filter(item => item.isTaken).map(item => (item.name || ""));
   
   const onChange = (checkedValues: any) => {
     return (
