@@ -1,5 +1,5 @@
 import { Button, Checkbox, Col, Divider, Input, Modal, Progress, Row, Tooltip, Typography } from 'antd';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
 import { ItemToTakeModel } from '../models/ItemToTakeModel';
 import { ItemToTakeBaseModel } from '../models/ItemToTakeBaseModel';
