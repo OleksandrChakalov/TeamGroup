@@ -40,12 +40,12 @@ jobs:
         run:  dotnet build --configuration Release ./GS.WebApi/GS.Business.Test
 
       - name: Run test in GS.Business.Test
-        run:  dotnet test ./GS.WebApi/GS.Business.Test --collect:"XPlat Code Coverage" --settings coverlet.runsettings --logger trx /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+        run:  dotnet test ./GS.WebApi/GS.Business.Test --collect:"XPlat Code Coverage" --logger trx /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput="./TestResults/coverage.opencover.xml"
 
       - name: Upload code coverage report
         uses: codecov/codecov-action@v1
         with:
-          files: ./TestResults/coverage.cobertura.xml
+          files: ./TestResult/coverage.cobertura.xml
           name: GS.Business.Test Coverage Report
           flags: unittests
           fail_ci_if_error: true
