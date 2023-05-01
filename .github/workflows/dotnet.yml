@@ -22,6 +22,9 @@ jobs:
       - name: Build React app
         run: npm run build --prefix ./GS.WebApi/GS.WebApp/ClientApp/
 
+      - name: Lint React app
+        run: npm run lint --prefix ./GS.WebApi/GS.WebApp/ClientApp/
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v2
         with:
@@ -42,8 +45,8 @@ jobs:
       - name: Run test in GS.Data.Test
         run:  dotnet test ./GS.WebApi/GS.Data.Test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 
-      - name: Generate test coverage report
-        run: dotnet tool install -g dotnet-reportgenerator-globaltool && reportgenerator "-reports:./GS.WebApi/GS.Business.Test/coverage.opencover.xml;./GS.WebApi/GS.Data.Test/coverage.opencover.xml" "-targetdir:./coverage" -reporttypes:Html
+#      - name: Generate test coverage report
+#        run: dotnet tool install -g dotnet-reportgenerator-globaltool && reportgenerator "-reports:./GS.WebApi/GS.Business.Test/coverage.opencover.xml;./GS.WebApi/GS.Data.Test/coverage.opencover.xml" "-targetdir:./coverage" -reporttypes:Html
 
 
 

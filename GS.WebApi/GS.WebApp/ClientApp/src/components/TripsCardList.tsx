@@ -12,10 +12,10 @@ const { confirm } = Modal;
 interface CardListProps {
   trips: TripModel[];
   onDelete: (id: string) => void;
-};
+}
 
 function isSomeValueDefined(someValue: any): any {
-  if (!!someValue) {
+  if (someValue) {
     return someValue
   }
 }
