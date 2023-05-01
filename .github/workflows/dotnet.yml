@@ -42,8 +42,24 @@ jobs:
       - name: Run test in GS.Business.Test
         run:  dotnet test ./GS.WebApi/GS.Business.Test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 
+      - name: Upload code coverage report
+        uses: codecov/codecov-action@v1
+        with:
+          files: ./GS.WebApi/GS.Business.Test/coverage.opencover.xml
+          name: GS.Business.Test Coverage Report
+          flags: unittests
+          fail_ci_if_error: true
+
       - name: Run test in GS.Data.Test
         run:  dotnet test ./GS.WebApi/GS.Data.Test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+
+      - name: Archive Test Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: |
+            ./GS.WebApi/GS.Data.Test/TestResults
+            ./GS.WebApi/GS.Business.Test/TestResults
 
       - name: Generate code coverage report
         uses: codecov/codecov-action@v1
