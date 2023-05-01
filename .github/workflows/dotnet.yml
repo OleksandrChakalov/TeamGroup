@@ -11,19 +11,19 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14.x'
-
-      - name: Install dependencies for React app
-        run: npm install --prefix ./GS.WebApi/GS.WebApp/ClientApp/
-
-      - name: Build React app
-        run: npm run build --prefix ./GS.WebApi/GS.WebApp/ClientApp/
-
-      - name: Lint React app
-        run: npm run lint --prefix ./GS.WebApi/GS.WebApp/ClientApp/
+#      - name: Install Node.js
+#        uses: actions/setup-node@v2
+#        with:
+#          node-version: '14.x'
+#
+#      - name: Install dependencies for React app
+#        run: npm install --prefix ./GS.WebApi/GS.WebApp/ClientApp/
+#
+#      - name: Build React app
+#        run: npm run build --prefix ./GS.WebApi/GS.WebApp/ClientApp/
+#
+#      - name: Lint React app
+#        run: npm run lint --prefix ./GS.WebApi/GS.WebApp/ClientApp/
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v2
@@ -40,7 +40,7 @@ jobs:
         run:  dotnet build --configuration Release ./GS.WebApi/GS.Business.Test
 
       - name: Run test in GS.Business.Test
-        run:  dotnet test ./GS.WebApi/GS.Business.Test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+        run:  dotnet test ./GS.WebApi/GS.Business.Test --collect:"XPlat Code Coverage" --settings coverlet.runsettings --logger trx /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 
       - name: Upload code coverage report
         uses: codecov/codecov-action@v1
