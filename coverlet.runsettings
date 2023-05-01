@@ -1,13 +1,2 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RunSettings>
-  <DataCollectionRunSettings>
-    <DataCollectors>
-      <DataCollector FriendlyName="XPlat code coverage">
-        <Configuration>
-          <Format>opencover</Format>
-          <Exclude>[xunit.*]*</Exclude>
-        </Configuration>
-      </DataCollector>
-    </DataCollectors>
-  </DataCollectionRunSettings>
-</RunSettings>
+<CoverletOutput>/TestResults/coverage.cobertura.xml</CoverletOutput>
+
