@@ -42,17 +42,17 @@ jobs:
       - name: Run test in GS.Business.Test
         run:  dotnet test ./GS.WebApi/GS.Business.Test --collect:"XPlat Code Coverage" --logger trx /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 
+      - name: Run test in GS.Data.Test
+        run:  dotnet test ./GS.WebApi/GS.Data.Test --collect:"XPlat Code Coverage" --logger trx /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+
       - name: Upload code coverage report
         uses: codecov/codecov-action@v1
         with:
-          files: ./TestResult/*/coverage.cobertura.xml
+          files: ./GS:WebApi/*/TestResult/*/coverage.cobertura.xml
           name: GS.Business.Test Coverage Report
           flags: unittests
           token: ${{ secrets.CODECOV_UPLOAD_TOKEN }}
           fail_ci_if_error: true
-
-      - name: Run test in GS.Data.Test
-        run:  dotnet test ./GS.WebApi/GS.Data.Test --collect:"XPlat Code Coverage" --logger trx --results-directory ./TestResults /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 
       - name: Archive Test Results
         uses: actions/upload-artifact@v2
@@ -60,13 +60,12 @@ jobs:
           name: test-results
           path: ./TestResults/*/coverage.cobertura.xml
 
-      - name: Deploy to Heroku
-        uses: akhileshns/heroku-deploy@v3.12.12
-        with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: Go & See
-          heroku_email: dimagnat@ukr.net
-          deployment_branch: main
-
+#      - name: Deploy to Heroku
+#        uses: akhileshns/heroku-deploy@v3.12.12
+#        with:
+#          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+#          heroku_app_name: Go & See
+#          heroku_email: dimagnat@ukr.net
+#          deployment_branch: main
 
 
