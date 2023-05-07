@@ -60,12 +60,13 @@ jobs:
           name: test-results
           path: ./TestResults/*/coverage.cobertura.xml
 
-#      - name: Deploy to Heroku
-#        uses: akhileshns/heroku-deploy@v3.12.12
-#        with:
-#          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-#          heroku_app_name: Go & See
-#          heroku_email: dimagnat@ukr.net
-#          deployment_branch: main
+
+      - name: Deploy to back4App
+        uses: back4app/github-action@master
+        with:
+          server_url: https://parseapi.back4app.com
+          app_id: NkYmO5CnHQNKN6bO9UDJZUVSMMnH2VziTKrhMAuz
+          master_key: PL7MiBqkKjXKWdb5i0EGmBVIfYR4RFrtXhX7CIkU
+          source: ./GS.WebApi
 
 
