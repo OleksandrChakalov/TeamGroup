@@ -58,16 +58,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: test-results
-          path: ./TestResults/*/coverage.cobertura.xml
-
-
-      - name: Deploy to back4App
-        uses: back4app/github-action@master
-        with:
-          server_url: https://parseapi.back4app.com
-          app_id: NkYmO5CnHQNKN6bO9UDJZUVSMMnH2VziTKrhMAuz
-          master_key: PL7MiBqkKjXKWdb5i0EGmBVIfYR4RFrtXhX7CIkU
-          source: ./GS.WebApi
-          fail_ci_if_error: false
+          path: ./GS:WebApi/*/TestResult/*/coverage.cobertura.xml
 
 
