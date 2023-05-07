@@ -1,8 +1,11 @@
-name: Run test when create pull request to main
+name: CI/CD Pipeline for GoSee WebApi with Code Coverage
 
 on:
   pull_request:
-    branches: [ main, feature ]
+    branches: [ main ]
+
+  push:
+    branches: [ main ]
 
 jobs:
   build:
