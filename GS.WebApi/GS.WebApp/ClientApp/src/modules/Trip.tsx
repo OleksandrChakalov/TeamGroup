@@ -17,7 +17,7 @@ import { ItemToTakeBaseModel } from '../models/ItemToTakeBaseModel';
 
 interface TripParams {
   tripId: string
-};
+}
 
 const Trip: FC = () => {
   const { tripId } = useParams<TripParams>();

@@ -1,5 +1,5 @@
 import { Button, Checkbox, Col, Divider, Input, Modal, Progress, Row, Tooltip, Typography } from 'antd';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
 import { ItemToTakeModel } from '../models/ItemToTakeModel';
 import { ItemToTakeBaseModel } from '../models/ItemToTakeBaseModel';
@@ -18,7 +18,7 @@ interface ItemstoTakeProps {
 }
 
 const ItemstoTake: FC<ItemstoTakeProps> = ({ items, onAddItemToTake, onRemoveItemToTake, onItemToTakeStatusChange, onItemToTakeUpdate}: ItemstoTakeProps) => {
-  const defaultCheckedList = items.filter(item => item.isTaken === true).map(item => (item.name || ""));
+  const defaultCheckedList = items.filter(item => item.isTaken).map(item => (item.name || ""));
   
   const onChange = (checkedValues: any) => {
     return (
