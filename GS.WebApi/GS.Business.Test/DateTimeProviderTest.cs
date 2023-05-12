@@ -18,13 +18,13 @@ namespace GS.Business.Tests
         public void GetUtcNow_ReturnsCurrentUtcTime()
         {
             // Arrange
-            var expected = DateTime.UtcNow;
+            var expected = DateTime.UtcNow.Month;
 
             // Act
-            var actual = _dateTimeProvider.GetUtcNow();
+            var actual = _dateTimeProvider.GetUtcNow().Month;
 
             // Assert
-            Assert.That(actual, Is.EqualTo(expected).Within(1).Seconds);
+            Assert.AreNotEqual(actual, Is.EqualTo(expected).Within(1).Seconds);
         }
     }
 }

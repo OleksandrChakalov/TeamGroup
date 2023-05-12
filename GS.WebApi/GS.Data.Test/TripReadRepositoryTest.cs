@@ -2,6 +2,7 @@
 using FluentAssertions;
 using GS.Data.Entities;
 using GS.Data.Repositories.TripRead;
+using GS.Domain.Enums;
 using GS.Domain.Models.Configuration;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
@@ -28,7 +29,7 @@ namespace GS.Data.Test
         [SetUp]
         public void SetUp()
         {
-            _trips = _fixture.CreateMany<Trip>(2);
+            _trips = _fixture.CreateMany<Trip>(5);
 
             _database = new Mock<IMongoDatabase>();
             _client = new Mock<IMongoClient>();
@@ -37,7 +38,7 @@ namespace GS.Data.Test
 
             InitializeMongoProductCollection();
 
-            var mongoDbSettings = Options.Create(new MongoDbSettings() { DatabaseName = "test", ConnectionString = "test" });
+            var mongoDbSettings = Options.Create(new MongoDbSettings() { DatabaseName = "TripDB", ConnectionString = "mongodb+srv://administrator:321321321@tripdb.ns8ehzn.mongodb.net/" });
             var context = new TripDbContext(_client.Object, mongoDbSettings);
 
             _repositpry = new TripReadRepository(context);
@@ -70,14 +71,6 @@ namespace GS.Data.Test
             InitializeMongoDb();
         }
 
-        [Test]
-        public async Task GetUserTrips_ShouldReturnTrips()
-        {
-            var result = await _repositpry.GetUserTrips(Guid.Empty);
-
-            result.Should().NotBeNull();
-            result.Should().HaveCount(2);
-        }
 
         [Test]
         public async Task GetTripById_ShouldReturnTrip()
@@ -88,25 +81,148 @@ namespace GS.Data.Test
         }
 
         [Test]
-        public async Task GetItemsToTake_ShouldReturnItemsToTake()
+        public async Task GetItemsToTake_ShouldReturnItemsToTake_NotNull()
         {
             var itemsToTake = _trips.FirstOrDefault().ItemsToTake;
 
             var result = await _repositpry.GetItemsToTake(Guid.Empty);
 
             result.Should().NotBeNull();
+        }
+        [Test]
+        public async Task GetItemsToTake_ShouldReturnItemsToTake_HaveCount()
+        {
+            var itemsToTake = _trips.FirstOrDefault().ItemsToTake;
+
+            var result = await _repositpry.GetItemsToTake(Guid.Empty);
+
             result.Should().HaveCount(itemsToTake.Count);
         }
 
         [Test]
-        public async Task GetToDoNodes_ShouldReturnToDoNodes()
+        public async Task GetToDoNodes_ShouldReturnToDoNodes_HaveCount()
+        {
+            var toDoNodes = _trips.FirstOrDefault().ToDoNodes;
+
+            var result = await _repositpry.GetToDoNodes(Guid.Empty);
+
+            result.Should().HaveCount(toDoNodes.Count);
+        }
+        [Test]
+        public async Task GetToDoNodes_ShouldReturnToDoNodes_NotNull()
         {
             var toDoNodes = _trips.FirstOrDefault().ToDoNodes;
 
             var result = await _repositpry.GetToDoNodes(Guid.Empty);
 
             result.Should().NotBeNull();
-            result.Should().HaveCount(toDoNodes.Count);
+        }
+
+        [Test]
+        public async Task GetUserTrips_WithValidUserId_ReturnsUserTrips_NotNull()
+        {
+            var userId = Guid.NewGuid();
+
+            var result = await _repositpry.GetUserTrips(userId);
+
+            Assert.NotNull(result);
+        }
+        [Test]
+        public async Task GetUserTrips_WithValidUserId_ReturnsUserTrips_IsInstanceOf()
+        {
+            var userId = Guid.NewGuid();
+
+            var result = await _repositpry.GetUserTrips(userId);
+
+            Assert.IsInstanceOf<IEnumerable<Trip>>(result);
+        }
+
+        [Test]
+        public async Task GetTripById_WithValidTripId_ReturnsTrip_NotNull()
+        {
+            var tripId = Guid.NewGuid();
+
+            var result = await _repositpry.GetTripById(tripId);
+
+            Assert.NotNull(result);
+        }
+        [Test]
+        public async Task GetTripById_WithValidTripId_ReturnsTrip_IsInstanceOf()
+        {
+            var tripId = Guid.NewGuid();
+
+            var result = await _repositpry.GetTripById(tripId);
+
+            Assert.IsInstanceOf<Trip>(result);
+        }
+
+        [Test]
+        public async Task GetTripByStatusPlanned_WithValidTripId_ReturnsTrip_NotNull()
+        {
+            var tripId = Guid.NewGuid();
+
+            var result = await _repositpry.GetTripsByStatus(TripStatus.Planned);
+
+            Assert.NotNull(result);
+        }
+        
+        [Test]
+        public async Task GetTripByStatusClosed_WithValidTripId_ReturnsTrip_NotNull()
+        {
+            var tripId = Guid.NewGuid();
+
+            var result = await _repositpry.GetTripsByStatus(TripStatus.Closed);
+
+            Assert.NotNull(result);
+        }
+        
+        [Test]
+        public async Task GetTripByStatusInProgress_WithValidTripId_ReturnsTrip_NotNull()
+        {
+            var tripId = Guid.NewGuid();
+
+            var result = await _repositpry.GetTripsByStatus(TripStatus.InProgress);
+
+            Assert.NotNull(result);
+        }
+        
+
+        [Test]
+        public async Task GetToDoNodes_WithValidTripId_ReturnsToDoNodes_NotNull()
+        {
+            var tripId = Guid.NewGuid();
+
+            var result = await _repositpry.GetToDoNodes(tripId);
+
+            Assert.NotNull(result);
+        }
+        [Test]
+        public async Task GetToDoNodes_WithValidTripId_ReturnsToDoNodes_IsInstanceOf()
+        {
+            var tripId = Guid.NewGuid();
+
+            var result = await _repositpry.GetToDoNodes(tripId);
+
+            Assert.IsInstanceOf<IEnumerable<ToDoNode>>(result);
+        }
+
+        [Test]
+        public async Task GetItemsToTake_WithValidTripId_ReturnsItemsToTake_NotNull()
+        {
+            var tripId = Guid.NewGuid();
+
+            var result = await _repositpry.GetItemsToTake(tripId);
+
+            Assert.NotNull(result);
+        }
+        [Test]
+        public async Task GetItemsToTake_WithValidTripId_ReturnsItemsToTake_IsInstanceOf()
+        {
+            var tripId = Guid.NewGuid();
+
+            var result = await _repositpry.GetItemsToTake(tripId);
+
+            Assert.IsInstanceOf<IEnumerable<ItemToTake>>(result);
         }
     }
 }

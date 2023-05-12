@@ -1,4 +1,5 @@
 ﻿using GS.Data.Entities;
+using GS.Domain.Enums;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace GS.Data.Repositories.TripRead
 
         public List<Trip> GetTripList()
         {
+            var count = _tripDbContext.Trips.Count(FilterDefinition<Trip>.Empty);
             var trips = _tripDbContext.Trips.AsQueryable();
             return trips.ToList();
         }
@@ -38,7 +40,7 @@ namespace GS.Data.Repositories.TripRead
         {
             var trips = await _tripDbContext.Trips.FindAsync(x => x.Id == tripId);
             var trip = await trips.FirstOrDefaultAsync();
-            
+
             return trip.ToDoNodes.ToList();
         }
 
@@ -49,5 +51,11 @@ namespace GS.Data.Repositories.TripRead
 
             return trip.ItemsToTake.ToList();
         }
+        public async Task<IEnumerable<Trip>> GetTripsByStatus(TripStatus status)
+        {
+            var trips = await _tripDbContext.Trips.FindAsync(x => x.Status == status);
+            return trips.ToList();
+        }
+
     }
 }
