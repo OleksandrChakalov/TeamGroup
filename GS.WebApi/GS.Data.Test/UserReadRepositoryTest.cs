@@ -20,7 +20,7 @@ namespace GS.Data.Test
         public void SetUp()
         {
             var options = new DbContextOptionsBuilder<GSDbContext>()
-                .UseInMemoryDatabase(databaseName: "Test" + Guid.NewGuid())
+                .UseInMemoryDatabase(databaseName: "TripDBUserd" + Guid.NewGuid())
                 .Options;
 
             _dbContext = new GSDbContext(options);

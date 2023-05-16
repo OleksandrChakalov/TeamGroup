@@ -37,7 +37,7 @@ namespace GS.Data.Test
 
             InitializeMongoProductCollection();
 
-            var mongoDbSettings = Options.Create(new MongoDbSettings() { DatabaseName = "test", ConnectionString = "test" });
+            var mongoDbSettings = Options.Create(new MongoDbSettings() { DatabaseName = "TripDB", ConnectionString = "mongodb+srv://administrator:321321321@tripdb.ns8ehzn.mongodb.net/" });
             var context = new TripDbContext(_client.Object, mongoDbSettings);
 
             _repository = new TripWriteRepository(context);

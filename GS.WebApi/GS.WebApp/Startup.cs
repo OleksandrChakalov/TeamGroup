@@ -102,7 +102,13 @@ namespace GS.WebApp
         {
 
             var jwtSettings = Configuration.GetSection("JWTSettings").Get<JwtSettings>();
-
+            jwtSettings = new JwtSettings
+            {
+                SecurityKey = "your-security-key",
+                ValidIssuer = "your-valid-issuer",
+                ValidAudience = "your-valid-audience",
+                ExpiryInMinutes = 60
+            };
             services.AddAuthentication(opt =>
             {
                 opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

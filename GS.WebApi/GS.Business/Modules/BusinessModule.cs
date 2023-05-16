@@ -16,7 +16,10 @@ namespace GS.Business.Modules
     {
         public static void AddBusinessModule(this IServiceCollection services, IConfiguration configuration)
         {
-            var settings = new MongoDbSettings();
+            var settings = new MongoDbSettings()
+            {
+                ConnectionString = "mongodb://localhost:27017"
+            };
             configuration.GetSection("MongoDatabaseSettings").Bind(settings);
             var mongoClient = new MongoClient(settings.ConnectionString);
 
