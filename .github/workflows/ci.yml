@@ -47,6 +47,8 @@ jobs:
 
       - name: Run test in GS.Data.Test
         run:  dotnet test ./GS.WebApi/GS.Data.Test --collect:"XPlat Code Coverage" --logger trx /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+        with:
+          fail_ci_if_error: false
 
       - name: Upload code coverage report
         uses: codecov/codecov-action@v1
