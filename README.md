@@ -1,5 +1,5 @@
 # **TeamGroup**
-![Build Status](https://github.com/OleksandrChakalov/TeamGroup/workflows/ci.yml/badge.svg)
+[![Build and Deploy](https://github.com/OleksandrChakalov/TeamGroup/workflows/ci.yml/badge.svg?branch=dev-ci)](https://github.com/OleksandrChakalov/TeamGroup/workflows/ci.yml)
 ## **Table of Contents**
 
 - [Team](#team)
