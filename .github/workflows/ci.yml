@@ -63,4 +63,10 @@ jobs:
           name: test-results
           path: ./GS:WebApi/*/TestResult/*/coverage.cobertura.xml
 
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts
+          path: /build/output
+
 
