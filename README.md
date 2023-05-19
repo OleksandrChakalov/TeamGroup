@@ -1,8 +1,6 @@
 # **TeamGroup**
 # Heard
 [![Build and Deploy](https://github.com/OleksandrChakalov/TeamGroup/actions/workflows/ci.yml/badge.svg?branch=dev-ci)](https://github.com/OleksandrChakalov/TeamGroup/actions/workflows/ci.yml)
-[![Tests](https://github.com/OleksandrChakalov/TeamGroup/actions/workflows/coverage.yml/badge.svg?branch=dev-ci)](https://github.com/OleksandrChakalov/TeamGroup/actions/workflows/coverage.yml)
-
 ## **Table of Contents**
 
 - [Team](#team)
